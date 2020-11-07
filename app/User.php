@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password',"type", "status"
     ];
 
     /**
@@ -55,5 +55,13 @@ class User extends Authenticatable
     public function  setPasswordAttribute($value)
     {
         return $this->attributes['password'] = bcrypt($value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getGuardNameAttribute()
+    {
+        return $this->type === self::TYPE_ADMIN ? "admin" : "web";
     }
 }
