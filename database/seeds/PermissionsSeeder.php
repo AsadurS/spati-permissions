@@ -13,15 +13,15 @@ class PermissionsSeeder extends Seeder
      */
     public function run()
     {
-        $superAdmin = Role::create(['name' => 'Super Admin', "guard_name"=>"admin"]);
-        $admin = Role::create(['name' => 'Admin', "guard_name"=>"admin"]);
-        $user = Role::create(['name' => 'User', "guard_name"=>"admin"]);
-        $this->addPostPermissions($admin, $admin);
+        $superAdmin = Role::create(['name' => 'Super Admin',  "guard_name"=>"admin"]);
+        $admin = Role::create(['name' => 'Admin',  "guard_name"=>"admin"]);
+        $user = Role::create(['name' => 'User',  "guard_name"=>"web"]);
+        $this->addPostPermissions($superAdmin, $admin);
     }
 
     /**
+     * @param Role $superAdmin
      * @param Role $admin
-     * @param Role $moderator
      */
     private function addPostPermissions(Role $superAdmin, Role $admin)
     {
