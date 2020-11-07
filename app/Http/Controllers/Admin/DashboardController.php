@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index()
-    {  
-    	dd(admin());
-    	dd("Asadur Zaman");
+    {
+    	return view("admin.home");
     }
 }

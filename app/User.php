@@ -9,7 +9,12 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use Notifiable;
-
+   const STATUS_ACTIVE = "active";
+   const STATUS_INACTIVE = "inactive";
+   const STATUS_BLOCK = "block";
+   const TYPE_SUPER_ADMIN = "super-admin";
+   const TYPE_ADMIN = "admin";
+   const TYPE_USER = "user";
     /**
      * The attributes that are mass assignable.
      *
